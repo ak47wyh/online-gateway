@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strategies xmlns="http://www.99bill.com/schema/asap/strategy"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:commons="http://www.99bill.com/schema/asap/commons"
+	xsi:schemaLocation="http://www.99bill.com/schema/asap/strategy http://www.99bill.com/schema/asap/strategy.xsd
+http://www.99bill.com/schema/asap/commons http://www.99bill.com/schema/asap/commons.xsd">
+
+<!-- 测试环境 -->
+<strategy>
+		<mpf>
+			<commons:member-code>10012138842</commons:member-code>
+			<commons:feature-code>F168_5</commons:feature-code>
+		</mpf>
+		<crypto-strategy>
+			<type>signatureAndCrypto</type>
+			<available>true</available>
+			<algorithm-set>
+				<signature-alg>SHA1withRSA</signature-alg>
+				<symmetric-alg>AES/CBC/PKCS5Padding</symmetric-alg>
+				<asymmetric-alg>RSA/ecb/pkcs1Padding</asymmetric-alg>
+			</algorithm-set>
+		</crypto-strategy>
+		<key-strategy>
+			<bill99-public-key-file-path>99bill[1].cert.rsa.20140803.cer</bill99-public-key-file-path>
+			<mpf-keystore>
+				<path>tester-rsa.pfx</path>
+				<key-store-type>PKCS12</key-store-type>
+				<key-store-password>123456</key-store-password>
+				<alias>test-alias</alias>
+				<key-password>123456</key-password>
+			</mpf-keystore>
+		</key-strategy>
+</strategy>
+
+<!-- 正式环境 
+<strategy>
+		<mpf>
+			<commons:member-code>10024610182</commons:member-code>
+			<commons:feature-code>F168_5</commons:feature-code>
+		</mpf>
+		<crypto-strategy>
+			<type>signatureAndCrypto</type>
+			<available>true</available>
+			<algorithm-set>
+				<signature-alg>SHA1withRSA</signature-alg>
+				<symmetric-alg>AES/CBC/PKCS5Padding</symmetric-alg>
+				<asymmetric-alg>RSA/ECB/PKCS1Padding</asymmetric-alg>
+			</algorithm-set>
+		</crypto-strategy>
+		<key-strategy>
+			<bill99-public-key-file-path>99bill.cert.rsa.20340630.cer</bill99-public-key-file-path>
+			<mpf-keystore>
+				<path>99bill-rsa.pfx</path>
+				<key-store-type>PKCS12</key-store-type>
+				<key-store-password>iboxpay</key-store-password>
+				<alias>test-alias</alias>
+				<key-password>iboxpay</key-password>
+			</mpf-keystore>
+		</key-strategy>
+</strategy>
+-->
+</strategies>

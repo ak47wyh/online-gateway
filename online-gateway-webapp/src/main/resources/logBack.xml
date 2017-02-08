@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- For assistance related to logback-translator or configuration -->
+<!-- files in general, please contact the logback user mailing list -->
+<!-- at http://www.qos.ch/mailman/listinfo/logback-user -->
+<!-- -->
+<!-- For professional support please see -->
+<!-- http://www.qos.ch/shop/products/professionalSupport -->
+<!-- -->
+<configuration>
+  <appender name="ncpays" class="ch.qos.logback.classic.sift.SiftingAppender">
+    <discriminator>
+      <key>bankName</key>
+      <defaultValue>common</defaultValue>
+    </discriminator>
+    <sift>
+	    <appender name="ncpays-${bankName}"
+	        class="ch.qos.logback.core.rolling.RollingFileAppender">
+	        <File>/opt/appl/jboss/log/ncpays_${bankName}.log</File>
+	        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+	            <FileNamePattern>/opt/appl/jboss/log/ncpays_${bankName}.log.%d{yyyy-MM-dd}.zip
+	            </FileNamePattern>
+	        </rollingPolicy>
+	
+  			<encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+		        <layout class="ch.qos.logback.classic.PatternLayout">
+			        <Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level [%F:%L] - %msg%n
+			        </Pattern>
+		        </layout>
+	            <charset class="java.nio.charset.Charset">UTF-8</charset>
+            </encoder>
+	    </appender>
+    </sift>
+    </appender>
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level [%F:%L] - %msg%n
+            </Pattern>
+        </encoder>
+    </appender>
+    <logger name="org.springframework" level="ERROR" />
+    <logger name="org.hibernate" level="ERROR" />
+    <logger name="com.cashbox" level="INFO" />
+    <logger name="com.iboxpay" level="INFO" />
+    <logger name="org.apache.commons.httpclient.params" level="ERROR" />
+    <logger name="org.logicalcobwebs.proxool.ConnectionPool" level="ERROR" />
+    <root level="INFO">
+    	<appender-ref ref="stdout" />
+        <appender-ref ref="ncpays" />
+    </root>
+</configuration>

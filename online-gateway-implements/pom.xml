@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.iboxpay</groupId>
+    <artifactId>online-gateway</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>online-gateway-implements</artifactId>
+  <packaging>pom</packaging>
+  
+  <dependencies>
+		<dependency>
+			<groupId>com.iboxpay</groupId>
+			<artifactId>online-gateway-common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		
+	</dependencies>
+	<modules>
+		<module>online-jz</module>
+		<module>online-kq</module>
+		<module>online-wechat-wft</module>
+		<module>online-wechat</module>
+		<module>online-alipay</module>
+		<module>online-xmcmbc</module>
+		<module>online-jzdsf</module>
+        <module>online-jd</module>
+    </modules>
+</project>

@@ -1,0 +1,15 @@
+test:
+    script:
+        - sh build.sh t
+staging:
+    type: build
+    script:
+        - sh build.sh pre
+    only:
+        - master
+production:
+    type: deploy
+    script:
+        - sh build.sh p
+    only:
+        - tags

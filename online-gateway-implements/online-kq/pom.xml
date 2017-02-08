@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.iboxpay</groupId>
+    <artifactId>online-gateway-implements</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>online-kq</artifactId>
+  <name>online-kq</name>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <dependencies>
+  <!-- 添加快钱依赖jar包	-->
+
+    <!-- PKIBASE-1.0.jar--> 
+	<dependency>
+		<groupId>fakepath</groupId>
+		<artifactId>pkibase</artifactId>
+		<version>1.0</version>
+	</dependency>
+	
+    <!-- ddp-jibx-product-1.1.7.jar--> 
+  	<dependency>
+	  <groupId>fakepath</groupId>
+	  <artifactId>ddp-jibx-product</artifactId>
+	  <version>1.1.7</version>
+	</dependency>
+    
+	<!-- if-crypto-metadata-4.3.19.jar--> 
+	<dependency>
+		<groupId>fakepath</groupId>
+		<artifactId>if-crypto-metadata</artifactId>
+		<version>4.3.19</version>
+	</dependency>
+	
+	<!-- if-crypto-sdk-4.3.19.jar--> 
+	<dependency>
+		<groupId>fakepath</groupId>
+		<artifactId>if-crypto-sdk</artifactId>
+		<version>4.3.19</version>
+	</dependency>
+	
+	<!-- if-jibx-schema-commons-1.0.1.jar-->
+    <dependency>
+		<groupId>fakepath</groupId>
+		<artifactId>if-jibx-schema-commons</artifactId>
+		<version>1.0.1</version>
+	</dependency>
+    
+	<!-- jibx-bind-1.2.jar -->
+	<dependency>
+	  <groupId>fakepath</groupId>
+	  <artifactId>jibx-bind</artifactId>
+	  <version>1.2</version>
+	</dependency>
+	<!-- jibx-run-1.2.jar -->
+   <dependency>
+		<groupId>fakepath</groupId>
+		<artifactId>jibx-run</artifactId>
+		<version>1.2</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>commons-collections</groupId>
+		<artifactId>commons-collections</artifactId>
+		<version>3.2.1</version>
+	</dependency>
+	</dependencies>
+	
+</project>
